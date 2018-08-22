@@ -11,18 +11,18 @@ export class Store extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = { posts: [] };
+    this.state = { posts: this.props.posts || [] };
   }
 
   async componentDidMount() {
-    if (this.props.posts) return;
+    if (this.state.posts.length) return;
     this.setState({ loading: true });
     const posts = await getPosts();
     this.setState({ posts, loading: false });
   }
 
   render() {
-    const posts = this.props.posts || this.state.posts;
+    const posts = this.state.posts;
     const loading = this.state.loading;
     return (
       <StoreContext.Provider value={{ posts, loading }}>

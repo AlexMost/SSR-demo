@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon src/server.js",
+    "server": "npm run babel && node babel/backend/server.js",
     "generate": "node generate.js",
     "clean": "rm -rf dist && mkdir -p dist ",
     "webpack": "webpack --mode development",
     "build": "npm run clean && cp -r static/* dist/ && npm run webpack",
     "static": "npm run build && http-server dist --cors",
-    "babel": "rm -rf babel && babel -d babel/frontend frontend && babel -d babel/shared shared && cp -r shared/posts.json babel/shared",
+    "babel": "rm -rf babel && babel -d babel/frontend frontend && babel -d babel/backend backend && babel -d babel/shared shared && cp -r shared/posts.json babel/shared",
     "http-server": "http-server"
   },
   "repository": {
