@@ -1,0 +1,38 @@
+h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.content {
+    margin: 30px;
+}
+
+.post {
+    border: 3px solid #dcd8d8;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.speaker-info {
+    display: flex
+}
+
+.speaker-details {
+    padding: 15px;
+}
+
+.speaker-details .detail {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.color-gray {
+    color: #5f5757;
+}
+
+.talk-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom:10px;
+    display: block;
+}
