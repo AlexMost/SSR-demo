@@ -10,6 +10,7 @@
     "webpack": "webpack --mode development",
     "build": "npm run clean && cp -r static/* dist/ && npm run webpack",
     "static": "npm run build && http-server dist --cors",
+    "babel": "rm -rf babel && babel -d babel/frontend frontend && babel -d babel/shared shared && cp -r shared/posts.json babel/shared",
     "http-server": "http-server"
   },
   "repository": {
