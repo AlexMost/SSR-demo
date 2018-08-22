@@ -1,7 +1,7 @@
 import React from 'react';
 import { getPosts } from '../shared/api';
 
-export const StoreContext = React.createContext({
+const StoreContext = React.createContext({
   loading: false,
   posts: [],
 });

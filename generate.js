@@ -1,5 +1,5 @@
 const faker = require('faker');
-const uuid = require('../../.cache/typescript/2.9/node_modules/@types/uuid');
+const uuid = require('uuid');
 const fs = require('fs');
 
 function generatePost() {
@@ -12,6 +12,7 @@ function generatePost() {
         country: faker.address.country(),
         city: faker.address.city(),
         talkTitle: faker.lorem.words(),
+        talkDescr: faker.lorem.paragraph(),
         company: faker.company.companyName(),
     }
 }

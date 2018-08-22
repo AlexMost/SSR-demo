@@ -36,3 +36,12 @@ h1 {
     margin-bottom:10px;
     display: block;
 }
+
+.speaker-avatar {
+    float: right;
+}
+
+.hide-speaker {
+    text-decoration: underline;
+    cursor: pointer;
+}
