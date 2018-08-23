@@ -1,8 +1,4 @@
 import express from 'express';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import App from '../frontend/App';
-import { Store } from '../frontend/Store';
 
 const app = express()
 
