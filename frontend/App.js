@@ -1,8 +1,9 @@
 import React from 'react';
+import loadable from '@loadable/component';
 import { BrowserRouter, Switch, Route, StaticRouter } from 'react-router-dom';
-import SpeakersList from './SpeakersList';
-import Speaker from './Speaker';
 import { Store } from './Store';
+const SpeakersList = loadable(() => import('./SpeakersList'));
+const Speaker = loadable(() => import('./Speaker'));
 
 const isNode = typeof window === 'undefined';
 

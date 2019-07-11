@@ -1,6 +1,14 @@
 {
     "presets": [
-        ["env", { "targets": { "node": "current" } }],
-        "react"
-    ]
+        ["@babel/preset-env", { "targets": { "node": "current" } }],
+        "@babel/preset-react"
+    ],
+    "plugins": ["@loadable/babel-plugin"],
+    "env": {
+        "backend": {
+            "plugins": [["css-modules-transform", {
+                "generateScopedName": "[name]__[local]_[hash:base64:5]"
+            }]]
+        }
+    }
 }
