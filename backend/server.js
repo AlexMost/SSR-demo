@@ -6,7 +6,6 @@ import express from 'express';
 import { getPosts } from '../shared/api';
 import { ChunkExtractor } from '@loadable/server'
 const statsFile = path.resolve('./dist/loadable-stats.json')
-const extractor = new ChunkExtractor({ statsFile });
 
 const app = express()
 
@@ -35,6 +34,7 @@ const renderHTML = (compHTML, posts, styles, links, scripts) => {
 app.use('/static', express.static('dist'));
 
 app.get('*', async (req, res) => {
+  const extractor = new ChunkExtractor({ statsFile });
   const posts = await getPosts();
   const HTML = ReactDS.renderToString(
     extractor.collectChunks(<App posts={posts} location={req.url} />)
