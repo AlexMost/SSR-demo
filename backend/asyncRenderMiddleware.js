@@ -1,9 +1,11 @@
 import { parentPort } from 'worker_threads';
+import { renderAppHTML } from './render';
 import { v4 } from 'uuid';
 
 export function handleThreadRender() {
-    parentPort.on('message', ({ uuid, data }) => {
-        parentPort.postMessage({ uuid, data });
+    parentPort.on('message', ({ uuid, data: { posts, url} }) => {
+        const HTML = renderAppHTML({ posts, url });
+        parentPort.postMessage({ uuid, data: HTML });
     })
 }
 
