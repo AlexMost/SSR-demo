@@ -9,7 +9,7 @@ export function handleThreadRender() {
     })
 }
 
-export function asyncRenderMiddleware(worker) {
+export function workerThreadMiddleware(worker) {
 
     async function asyncRender(reqId, data) {
         return new Promise((res, rej) => {
@@ -24,7 +24,7 @@ export function asyncRenderMiddleware(worker) {
 
     return (req, res, next) => {
         const reqId = v4();
-        req.asyncRender = (data) => asyncRender(reqId, data);
+        req.workerThreadRender = (data) => asyncRender(reqId, data);
         next();
     };
 }
