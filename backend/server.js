@@ -11,9 +11,9 @@ if (isMainThread) {
 
   app.use(asyncRenderMiddleware(worker));
 
-  app.use('/static', express.static('../dist'));
+  app.use('/static', express.static('dist'));
 
-  app.get('/', async (req, res) => {
+  app.get('*', async (req, res) => {
     console.log('>>> request', req.originalUrl);
     const posts = await getPosts();
     const workerData = await req.asyncRender({ data: 'test', url: req.originalUrl });
