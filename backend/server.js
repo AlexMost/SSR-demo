@@ -26,8 +26,10 @@ const renderHTML = (compHTML, posts) => {
 }
 
 app.use('/static', express.static('dist'));
+app.use('/favicon.ico', express.static('dist'));
 
 app.get('*', async (req, res) => {
+  console.log('request ->>>', req.path);
   const posts = await getPosts();
   const HTML = ReactDS.renderToString(<App posts={posts} location={req.url} />);
   res.send(renderHTML(HTML, posts));
