@@ -8,6 +8,7 @@
     "generate": "node generate.js",
     "clean": "rm -rf dist && mkdir -p dist ",
     "webpack": "webpack --mode development",
+    "build-server": "webpack --config webpack.server.config.js --mode development",
     "build": "npm run clean && cp -r static/* dist/ && npm run webpack",
     "static": "npm run build && http-server dist --cors",
     "babel-node": "babel-node",

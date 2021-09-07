@@ -3,5 +3,5 @@ import ReactDS from 'react-dom/server';
 import App from './App';
 import posts from '../shared/posts';
 
-const HTML = ReactDS.renderToString(<App posts={posts} location="/speaker/9a1a7e40-a642-11e8-9704-d5f1cbfc11d3" />);
+const HTML = ReactDS.renderToString(<App posts={posts} location="/speaker/2d049e10-0fb4-11ec-8f1a-6b159bd815ca" />);
 console.log(HTML);
