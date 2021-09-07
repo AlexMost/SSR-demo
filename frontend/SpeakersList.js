@@ -10,6 +10,33 @@ const Speakers = withStore(({ posts, loading }) => {
             <ul>
                 { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
             </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
+            <ul>
+                { posts.map((post) => <SpeakersListItem key={post.id} {...post} /> ) }
+            </ul>
         </main>
     )
 });

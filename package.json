@@ -13,7 +13,7 @@
     "babel-node": "babel-node",
     "build-server": "webpack --mode development --config webpack.server.config.js",
     "http-server": "http-server",
-    "build-run": "npm run build-server && node dist/server.js"
+    "build-run": "npm run webpack && npm run build-server && node dist/server.js"
   },
   "repository": {
     "type": "git",
