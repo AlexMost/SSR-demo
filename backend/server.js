@@ -1,16 +1,16 @@
 import express from 'express';
 import { getPosts } from '../shared/api';
 import { isMainThread, Worker } from 'worker_threads';
-// import { workerThreadMiddleware, handleThreadRender  } from './workerThreadMiddleware';
-import { createPool, workerPoolThreadMiddleware, handleWorkerPoolRenderer } from './nodeThreadWorkerPoolMiddleware';
+import { workerThreadMiddleware, handleThreadRender  } from './workerThreadMiddleware';
+// import { createPool, workerPoolThreadMiddleware, handleWorkerPoolRenderer } from './nodeThreadWorkerPoolMiddleware';
 
 if (isMainThread) {
-  // const worker = new Worker(__filename, {workerData: {num: 5}});
-  const pool = createPool();
+  const worker = new Worker(__filename, {workerData: {num: 5}});
+  // const pool = createPool();
   const app = express()
 
-  // app.use(workerThreadMiddleware(worker));
-  app.use(workerPoolThreadMiddleware(pool));
+  app.use(workerThreadMiddleware(worker));
+  // app.use(workerPoolThreadMiddleware(pool));
 
   app.use('/static', express.static('dist'));
 
@@ -23,6 +23,7 @@ if (isMainThread) {
 
   app.listen(3000, () => console.log('Example app listening on port 3000!'));
 } else {
-  handleWorkerPoolRenderer();
-  // handleThreadRender();
+  require('unix-dgram');
+  // handleWorkerPoolRenderer();
+  handleThreadRender();
 }

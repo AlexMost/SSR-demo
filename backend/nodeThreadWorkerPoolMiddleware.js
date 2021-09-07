@@ -4,7 +4,7 @@ import { renderAppHTML } from './render';
 
 export function createPool() {
     return new StaticPool({
-        size: 4,
+        size: 8,
         task: __filename,
     })
 }

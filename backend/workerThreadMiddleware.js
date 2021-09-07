@@ -24,7 +24,7 @@ export function workerThreadMiddleware(worker) {
 
     return (req, res, next) => {
         const reqId = v4();
-        req.workerThreadRender = (data) => asyncRender(reqId, data);
+        req.asyncRender = (data) => asyncRender(reqId, data);
         next();
     };
 }

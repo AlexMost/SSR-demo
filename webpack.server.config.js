@@ -10,6 +10,9 @@ const path = require('path');
     filename: 'server.js',
     path: path.resolve(__dirname, 'dist')
   },
+  externals: {
+    'unix-dgram': 'commonjs unix-dgram',
+  },
   module: {
     rules: [
       {
