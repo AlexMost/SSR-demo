@@ -13,6 +13,7 @@ if (isMainThread) {
   // app.use(workerPoolThreadMiddleware(pool));
 
   app.use('/static', express.static('dist'));
+  app.use('/favicon.ico', express.static('dist'));
 
   app.get('*', async (req, res) => {
     console.log('>>> request', req.originalUrl);
